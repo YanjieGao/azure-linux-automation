@@ -29,6 +29,6 @@
 		</errors>
 		<warnings>
 			<keywords>Proceeding WITHOUT firewalling in effect!</keywords>
-			<keywords>7 urandom warning(s) missed due to ratelimiting</keywords>
+			<keywords>urandom warning(s) missed due to ratelimiting</keywords>
 		</warnings>
 </messages>
