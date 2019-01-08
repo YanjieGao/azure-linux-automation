@@ -14,7 +14,7 @@ def SetNTPVariables(DetectedDistro):
                 ntp_package = 'ntp'
                 ntp_service = 'ntpdc'
                 ntp_query = "dpkg-query -s ntp"
-                ntp_installCommand = "apt-get install --force-yes -y ntp"
+                ntp_installCommand = "apt-get install --allow -y ntp"
                 ntp_status = "ntpdc -p"
         if DetectedDistro.upper() == 'SUSE':
                 ntp_package = 'ntp'
@@ -67,10 +67,10 @@ def IsNtpInstalled(ntp_query):
         else:
                 return True
 def AddNTPServers():
-        Run("echo server 0.rhel.pool.ntp.org >> /etc/ntp.conf")
-        Run("echo server 1.rhel.pool.ntp.org >> /etc/ntp.conf")
-        Run("echo server 2.rhel.pool.ntp.org >> /etc/ntp.conf")
-        Run("echo server 3.rhel.pool.ntp.org >> /etc/ntp.conf")
+        Run("echo server 0.ubuntu.pool.ntp.org >> /etc/ntp.conf")
+        Run("echo server 1.ubuntu.pool.ntp.org >> /etc/ntp.conf")
+        Run("echo server 2.ubuntu.pool.ntp.org >> /etc/ntp.conf")
+        Run("echo server 3.ubuntu.pool.ntp.org >> /etc/ntp.conf")
         print("NTP_SERVERS_INSTALLED")
 def RestartNtpService(ntp_service):
         Run("service "+ntp_service+" restart")
