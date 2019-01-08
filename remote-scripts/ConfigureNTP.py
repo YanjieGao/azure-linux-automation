@@ -13,8 +13,8 @@ def SetNTPVariables(DetectedDistro):
         if DetectedDistro.upper() == 'UBUNTU':
                 ntp_package = 'ntp'
                 ntp_service = 'ntpdc'
-                ntp_query = "dpkg-query -s ntp"
-                ntp_installCommand = "apt-get install -y ntp"
+                ntp_query = "sudo dpkg-query -s ntp"
+                ntp_installCommand = "sudo apt-get install -y ntp"
                 ntp_status = "ntpdc -p"
         if DetectedDistro.upper() == 'SUSE':
                 ntp_package = 'ntp'
@@ -74,7 +74,7 @@ def AddNTPServers():
         Run("echo server 3.ubuntu.pool.ntp.org >> /etc/ntp.conf")
         print("NTP_SERVERS_INSTALLED")
 def RestartNtpService(ntp_service):
-        Run("service "+ntp_service+" restart")
+        Run("sudo service "+ntp_service+" restart")
 
 def main(DetectedDistro):
         (ntp_package,ntp_service,ntp_query,ntp_installCommand)=SetNTPVariables(DetectedDistro)
