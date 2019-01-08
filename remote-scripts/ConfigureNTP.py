@@ -74,7 +74,7 @@ def AddNTPServers():
         Run("echo server 3.ubuntu.pool.ntp.org >> /etc/ntp.conf")
         print("NTP_SERVERS_INSTALLED")
 def RestartNtpService(ntp_service):
-        Run("sudo service "+ntp_service+" restart")
+        Run("sudo service ntp restart")
 
 def main(DetectedDistro):
         (ntp_package,ntp_service,ntp_query,ntp_installCommand)=SetNTPVariables(DetectedDistro)
