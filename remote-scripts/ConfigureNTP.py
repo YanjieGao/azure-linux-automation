@@ -14,7 +14,7 @@ def SetNTPVariables(DetectedDistro):
                 ntp_package = 'ntp'
                 ntp_service = 'ntpdc'
                 ntp_query = "dpkg-query -s ntp"
-                ntp_installCommand = "apt-get install --allow -y ntp"
+                ntp_installCommand = "apt-get install -y ntp"
                 ntp_status = "ntpdc -p"
         if DetectedDistro.upper() == 'SUSE':
                 ntp_package = 'ntp'
