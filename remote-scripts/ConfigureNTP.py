@@ -67,6 +67,7 @@ def IsNtpInstalled(ntp_query):
         else:
                 return True
 def AddNTPServers():
+        Run("cat /dev/null > /etc/ntp.conf")
         Run("echo server 0.ubuntu.pool.ntp.org >> /etc/ntp.conf")
         Run("echo server 1.ubuntu.pool.ntp.org >> /etc/ntp.conf")
         Run("echo server 2.ubuntu.pool.ntp.org >> /etc/ntp.conf")
